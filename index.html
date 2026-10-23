@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Firefly Hill House</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Firefly Hill House · Stone Ridge, NY">
+<meta property="og:description" content="A warm three-bedroom house in the woods outside Stone Ridge. Gas fireplace, heated bath floors, Hästens and RH beds. Sleeps 6. 5.0 from 51 Airbnb reviews.">
+<meta property="og:image" content="https://fireflyhillhouse.com/images/og.jpg">
+<meta property="og:url" content="https://fireflyhillhouse.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A three-bedroom house in the woods outside Stone Ridge, NY. Sleeps 6. Deer-fenced yard, screened porch, gas fireplace. Two hours from New York City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: mobile-first field guide to one house — single column with swipeable photo strips on phones; widens to editorial grids from 760px. One firefly-glow accent reserved for booking actions. */
+:root{
+  --paper:#eef1ee;--paper-2:#e2e7e3;--ink:#18221d;--ink-soft:#4c5a52;--rule:#c7cfc9;
+  --glow:#c9b52e;--glow-ink:#18221d;--walnut:#6b4a33;
+  --display:"Gloock","Iowan Old Style",Georgia,serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --measure:38rem;--wide:72rem;--barh:0px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#121a16;--paper-2:#1a241f;--ink:#e6ebe6;--ink-soft:#a3b0a8;--rule:#2d3a33;--glow:#e3cf4a;--glow-ink:#121a16;--walnut:#c79a75;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121a16;--paper-2:#1a241f;--ink:#e6ebe6;--ink-soft:#a3b0a8;--rule:#2d3a33;--glow:#e3cf4a;--glow-ink:#121a16;--walnut:#c79a75;color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:calc(var(--barh) + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--wide);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:760px){.wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
+.narrow{max-width:calc(var(--measure) + 56px)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,6vw,3.25rem)}
+h3{font-size:1.4rem}
+p{margin:0}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.mark{font-family:var(--display);font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.mark i{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px 3px color-mix(in srgb,var(--glow) 55%,transparent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 1rem/1 var(--body);min-height:48px;padding:0 1.25rem;border-radius:999px;text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.btn.solid{background:var(--glow);color:var(--glow-ink);border-color:var(--glow)}
+.btn.ghost{background:transparent}
+@media (hover:hover){.btn.solid:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--paper)}}
+.top .btn{display:none}
+@media (min-width:760px){.top .btn{display:inline-flex;min-height:40px;font-size:.9rem}}
+
+/* hero: photo first on phones */
+.hero{display:flex;flex-direction:column;gap:1.25rem;padding-block:.25rem 0}
+.photo-hero{position:relative;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+.photo-hero img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.intro{display:grid;gap:1rem}
+.hero h1{font-size:clamp(2.9rem,13vw,8.5rem);line-height:.95}
+.hero .sub{font-size:1.1rem;color:var(--ink-soft);max-width:34rem}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:0}
+.facts div{background:var(--paper);padding:.7rem .85rem;display:grid;gap:.1rem}
+.facts dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.facts dd{margin:0;font-size:.95rem}
+.facts b{font-weight:600}
+.rating{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline;padding-block:1rem;border-bottom:1px solid var(--rule)}
+.rating .stars{font-family:var(--display);font-size:1.6rem}
+.rating span{color:var(--ink-soft);font-size:.9rem}
+@media (min-width:760px){
+  .hero{display:grid;grid-template-columns:1fr minmax(16rem,22rem);gap:2rem;padding-top:clamp(1.5rem,4vw,3rem);align-items:end}
+  .intro{grid-column:1}.facts{grid-column:2;grid-row:1}
+  .photo-hero{grid-column:1/-1;margin-inline:0}
+  .photo-hero img{aspect-ratio:16/8;border-radius:4px}
+  .rating{grid-column:1/-1}
+  .hero .sub{font-size:1.3rem}
+}
+.flies{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.flies span{position:absolute;width:5px;height:5px;border-radius:50%;background:#f3e36a;box-shadow:0 0 8px 3px rgba(243,227,106,.7);opacity:0;animation:blink 6s infinite ease-in-out}
+@keyframes blink{0%,100%{opacity:0;transform:translate(0,0)}35%{opacity:.95}55%{opacity:.1;transform:translate(14px,-10px)}70%{opacity:.8}}
+@media (prefers-reduced-motion:reduce){.flies{display:none}}
+
+section{padding-block:clamp(2.5rem,8vw,6rem)}
+section + section{border-top:1px solid var(--rule)}
+.lede{font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.5;margin-top:1rem}
+.stack{display:grid;gap:1rem}
+.head{display:grid;gap:.6rem;margin-bottom:1.5rem}
+@media (min-width:760px){.head{margin-bottom:2.25rem}}
+
+/* swipe strip: phones scroll sideways, wider screens become grids */
+.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scroll-padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.strip::-webkit-scrollbar{display:none}
+.strip > *{flex:0 0 82%;scroll-snap-align:start;min-width:0}
+.strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;cursor:zoom-in}
+.hint{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin-top:.6rem}
+@media (min-width:760px){.hint{display:none}}
+
+/* seasons */
+.seasons{margin-top:1.75rem}
+.season{display:grid;gap:.5rem;align-content:start}
+.season img{aspect-ratio:4/5}
+.season p{font-size:.95rem;color:var(--ink-soft)}
+@media (min-width:760px){.seasons.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;overflow:visible;margin-inline:0;padding-inline:0}}
+
+/* rooms */
+.rooms{display:grid;gap:2rem}
+.room{display:grid;gap:.6rem;align-content:start;min-width:0}
+.room img{aspect-ratio:3/2;object-fit:cover;width:100%;border-radius:3px;cursor:zoom-in}
+.room .bed{font-family:var(--mono);font-size:.8rem;color:var(--walnut)}
+.room p{font-size:.975rem;color:var(--ink-soft)}
+@media (min-width:860px){.rooms{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.note{margin-top:1.75rem;padding:1rem 1.1rem;background:var(--paper-2);border-radius:4px;font-size:.975rem}
+
+/* galleries */
+.gallery{margin-top:1.25rem}
+@media (min-width:760px){
+  .gallery.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;overflow:visible;margin-inline:0;padding-inline:0}
+  .gallery.strip > *{grid-column:span 2}
+  .gallery.strip > .w3{grid-column:span 3}.gallery.strip > .w4{grid-column:span 4}.gallery.strip > .w6{grid-column:1/-1}
+  .gallery.strip img{height:100%}
+}
+.split{display:grid;gap:1.5rem}
+@media (min-width:860px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:3.5rem;align-items:start}.split .gallery{margin-top:0}}
+
+/* nearby */
+.drive{display:grid;gap:2rem}
+@media (min-width:760px){.drive{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}}
+.drive ul{list-style:none;margin:0;padding:0}
+.drive li{display:grid;grid-template-columns:4.25rem 1fr;gap:.75rem;padding-block:.7rem;border-bottom:1px dashed var(--rule);font-size:.975rem}
+.drive .min{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--walnut);font-size:.85rem;padding-top:.1rem}
+.drive h3{margin-bottom:.4rem}
+
+/* reviews */
+.reviews{display:grid;gap:1.75rem}
+@media (min-width:860px){.reviews{grid-template-columns:repeat(3,1fr);gap:2rem}}
+blockquote{margin:0;display:grid;gap:.75rem;align-content:start}
+blockquote p{font-family:var(--display);font-size:1.25rem;line-height:1.35}
+blockquote footer{font-size:.9rem;color:var(--ink-soft)}
+.more{margin-top:1.75rem;font-size:.95rem}
+
+/* know */
+.know{display:grid;margin:0}
+@media (min-width:760px){.know{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3rem}}
+.know div{padding-block:.9rem;border-bottom:1px solid var(--rule);display:grid;gap:.25rem}
+.know dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.know dd{margin:0;font-size:.975rem}
+
+/* book */
+.book{background:var(--ink);color:var(--paper);border-top:0!important}
+.book .label{color:color-mix(in srgb,var(--paper) 65%,transparent)}
+.book h2{font-size:clamp(2.1rem,7vw,4rem)}
+.book p{color:color-mix(in srgb,var(--paper) 80%,transparent);max-width:36rem}
+.ctas{display:grid;gap:.75rem;margin-top:1.75rem}
+.ctas .btn{width:100%}
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem}
+@media (min-width:760px){.ctas{display:flex;flex-wrap:wrap;align-items:center}.ctas .btn{width:auto}}
+.book .btn.ghost{border-color:var(--paper);color:var(--paper)}
+@media (hover:hover){.book .btn.ghost:hover{background:var(--paper);color:var(--ink)}}
+.email{font-family:var(--mono);font-size:.95rem;user-select:all;word-break:break-all}
+.copy{font:500 .85rem var(--body);background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:var(--paper);border-radius:999px;min-height:36px;padding:0 .9rem;cursor:pointer}
+footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem}
+
+/* sticky booking bar, phones only */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--rule);padding-top:.6rem;padding-bottom:calc(.6rem + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;justify-content:space-between;gap:.75rem;transition:transform .25s}
+.bar.away{transform:translateY(110%)}
+.bar small{display:block;color:var(--ink-soft);font-size:.78rem;line-height:1.3}
+.bar strong{font-family:var(--display);font-weight:400;font-size:1.05rem;line-height:1.2}
+.bar .btn{min-height:44px;flex:none}
+@media (min-width:760px){.bar{display:none}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,12,.96);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(8px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));touch-action:pan-y}
+.lb img{max-height:82vh;max-width:100%;object-fit:contain;border-radius:3px}
+.lb figure{margin:0;display:grid;gap:.75rem;justify-items:center}
+.lb figcaption{color:#cfd6d1;font-family:var(--mono);font-size:.78rem;text-align:center;padding-inline:3rem}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.lb .x{top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px))}
+.lb .prev{left:calc(8px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.lb .next{right:calc(8px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+@media (min-width:760px){.lb .prev,.lb .next{top:50%;bottom:auto}}
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top" id="top"><i aria-hidden="true"></i>Firefly Hill House</a>
+    <a class="btn solid" href="#book">Book a stay</a>
+  </header>
+
+  <div class="hero">
+    <div class="photo-hero">
+      <img src="images/dusk.jpg" alt="The house at dusk, every window lit" data-full="images/dusk.jpg" fetchpriority="high">
+    </div>
+    <div class="intro">
+      <p class="label">Stone Ridge · Hudson Valley · New York</p>
+      <h1>Firefly Hill<br>House</h1>
+      <p class="sub">A warm, quiet house in the woods outside Stone Ridge. A gas fireplace, heated bathroom floors, very good beds, and nowhere you have to be. Two hours from New York City.</p>
+    </div>
+    <dl class="facts" aria-label="At a glance">
+      <div><dt>Sleeps</dt><dd><b>6</b> in 3 bedrooms</dd></div>
+      <div><dt>Baths</dt><dd><b>3</b> full, 2 en suite</dd></div>
+      <div><dt>Beds</dt><dd><b>Hästens</b> &amp; RH</dd></div>
+      <div><dt>Yard</dt><dd><b>Deer-fenced</b></dd></div>
+      <div><dt>Fireplace</dt><dd><b>Gas</b>, by the table</dd></div>
+      <div><dt>From NYC</dt><dd><b>2</b> hours</dd></div>
+    </dl>
+    <div class="rating">
+      <span class="stars">5.0</span>
+      <span>51 reviews on Airbnb · Guest Favorite, top 10% of homes · Superhost, 7 years</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap narrow">
+    <p class="label">The house</p>
+    <p class="lede">We built this place for downtime, and winter is when it does that best. Turn on the gas fireplace, cook something slow in a kitchen that has what you need, and pad around three full baths with radiant-heat floors. Upstairs, two primary bedrooms with blackout blinds and beds by Hästens and Restoration Hardware. It snows, it gets very quiet, and the woods outside the windows go blue at four o'clock.</p>
+    <div class="stack" style="margin-top:1rem">
+      <p>Downstairs is one open floor: a dining area by the fireplace, a long living room with a Frame TV, board games and puzzles, and between them a well-stocked kitchen with an island. When you want air, Minnewaska and Mohonk are twenty minutes away, and there's a sauna on the Hudson in Kingston with a cold plunge in the river.</p>
+      <p>It's a different house in every season.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="seasons strip">
+      <div class="season"><img src="images/snow-sm.jpg" data-full="images/snow.jpg" alt="The house and yard under fresh snow" loading="lazy"><h3>Winter</h3><p>Snow on the trees, the fireplace on, and staying in as the whole plan.</p></div>
+      <div class="season"><img src="images/garden-sm.jpg" data-full="images/garden.jpg" alt="Lettuces and marigolds in a raised bed" loading="lazy"><h3>Spring</h3><p>The gardens wake up. Raised beds of herbs, greens and flowers.</p></div>
+      <div class="season"><img src="images/firepit-sm.jpg" data-full="images/firepit.jpg" alt="Solo Stove fire burning under string lights at dusk" loading="lazy"><h3>Summer</h3><p>Fireflies fill the woods behind the yard. Hence the name.</p></div>
+      <div class="season"><img src="images/porch-2-sm.jpg" data-full="images/porch-2.jpg" alt="Teak dining table on the screened porch" loading="lazy"><h3>Fall</h3><p>Farm stands, orchards and harvest season, all within fifteen minutes.</p></div>
+    </div>
+    <p class="hint">Swipe for all four seasons →</p>
+  </div>
+</section>
+
+<section id="sleep">
+  <div class="wrap">
+    <div class="head"><p class="label">Sleeping</p><h2>Three bedrooms, three real beds</h2></div>
+    <div class="rooms">
+      <article class="room">
+        <img src="images/bedroom1-sm.jpg" data-full="images/bedroom1.jpg" alt="Bedroom 1 with upholstered king bed" loading="lazy">
+        <p class="bed">Bedroom 1 · upstairs · king</p>
+        <h3>Restoration Hardware king, Helix mattress</h3>
+        <p>A large primary with an en-suite bath, a yoga corner and a Peloton.</p>
+      </article>
+      <article class="room">
+        <img src="images/bedroom2-sm.jpg" data-full="images/bedroom2.jpg" alt="Bedroom 2 with Hästens queen bed and desk" loading="lazy">
+        <p class="bed">Bedroom 2 · upstairs · queen</p>
+        <h3>Hästens queen</h3>
+        <p>The second primary, with a work desk and an en-suite bath with a jetted tub.</p>
+      </article>
+      <article class="room">
+        <img src="images/bedroom3-sm.jpg" data-full="images/bedroom3.jpg" alt="Bedroom 3 with double bed and bookshelf" loading="lazy">
+        <p class="bed">Bedroom 3 · main floor · double</p>
+        <h3>Casper double</h3>
+        <p>Downstairs, with a full bathroom just across the hall.</p>
+      </article>
+    </div>
+    <p class="note">Every bedroom has its own split A/C and blackout blinds. Every bathroom has radiant floor heat and MALIN+GOETZ products.</p>
+    <div class="gallery strip">
+      <img src="images/bath-tub-sm.jpg" data-full="images/bath-tub.jpg" alt="Bathroom with jetted tub and round mirror" loading="lazy">
+      <img src="images/bath-shower-sm.jpg" data-full="images/bath-shower.jpg" alt="Bathroom with walk-in tiled shower" loading="lazy">
+      <img src="images/bedroom1-peloton-sm.jpg" data-full="images/bedroom1-peloton.jpg" alt="Peloton and armoire in Bedroom 1" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <div class="wrap">
+    <div class="head"><p class="label">Main floor</p><h2>One open floor, three ways to use it</h2></div>
+    <div class="gallery strip">
+      <img class="w4" src="images/living-sm.jpg" data-full="images/living.jpg" alt="Living room with sofa, wood coffee table and patterned rug" loading="lazy">
+      <img src="images/fireplace-sm.jpg" data-full="images/fireplace.jpg" alt="Gas fireplace with reclaimed-wood surround" loading="lazy">
+      <img class="w3" src="images/kitchen-sm.jpg" data-full="images/kitchen.jpg" alt="Kitchen island with stools and gas range" loading="lazy">
+      <img class="w3" src="images/dining-fireplace-sm.jpg" data-full="images/dining-fireplace.jpg" alt="Dining area beside the fireplace" loading="lazy">
+      <img src="images/kitchen-2-sm.jpg" data-full="images/kitchen-2.jpg" alt="Kitchen counters and window" loading="lazy">
+      <img src="images/dining-sm.jpg" data-full="images/dining.jpg" alt="Dining table under three circle prints" loading="lazy">
+      <img src="images/living-2-sm.jpg" data-full="images/living-2.jpg" alt="Living room seating and TV" loading="lazy">
+    </div>
+    <p class="hint">Swipe for more · tap any photo to enlarge</p>
+  </div>
+</section>
+
+<section id="outside">
+  <div class="wrap">
+    <div class="split">
+      <div class="head" style="margin:0">
+        <p class="label">Outside</p>
+        <h2>A fenced yard that opens into the woods</h2>
+        <div class="stack" style="margin-top:.5rem">
+          <p>The whole yard is deer-fenced. That keeps the gardens intact, keeps ticks down, and gives kids and small dogs room to run.</p>
+          <p>There's Gloster teak furniture on the patio, a Weber gas grill, a Solo Stove Yukon fire pit under string lights, a hammock between two cedars, and enough lawn for frisbee. The screened porch off the kitchen is where most dinners end up.</p>
+        </div>
+      </div>
+      <div>
+        <div class="gallery strip">
+          <img class="w6" src="images/porch-sm.jpg" data-full="images/porch.jpg" alt="Screened porch with teak dining set and lounge chairs" loading="lazy">
+          <img class="w3" src="images/patio-sm.jpg" data-full="images/patio.jpg" alt="Patio with blue-cushioned teak sofa and chairs" loading="lazy">
+          <img class="w3" src="images/grill-sm.jpg" data-full="images/grill.jpg" alt="Weber grill on the stone patio" loading="lazy">
+          <img class="w3" src="images/yard-sm.jpg" data-full="images/yard.jpg" alt="Back of the house with raised garden beds" loading="lazy">
+          <img class="w3" src="images/night-sm.jpg" data-full="images/night.jpg" alt="Fire pit and string lights at night" loading="lazy">
+        </div>
+        <p class="hint">Swipe for more →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nearby">
+  <div class="wrap">
+    <div class="head"><p class="label">Drive times from the driveway</p><h2>Five minutes to coffee, twenty to the Gunks</h2></div>
+    <div class="drive">
+      <div>
+        <h3>Eat &amp; drink</h3>
+        <ul>
+          <li><span class="min">5 min</span><span>Black Dot Coffee, groceries, Cherries, Upstate Taco</span></li>
+          <li><span class="min">10 min</span><span>Ollie's Pizza, BKLYN Sour, Saunderskill Farm</span></li>
+          <li><span class="min">15 min</span><span>Westwind Orchard, Arrowood Farms Brewery, Ravenswood</span></li>
+          <li><span class="min">20 min</span><span>Kingston and New Paltz</span></li>
+          <li><span class="min">30 min</span><span>Woodstock</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get outside</h3>
+        <ul>
+          <li><span class="min">10 min</span><span>Several Rail Trail trailheads</span></li>
+          <li><span class="min">20 min</span><span>Vernooy Kill Falls trailhead (our favorite)</span></li>
+          <li><span class="min">20 min</span><span>Minnewaska State Park and Mohonk Preserve</span></li>
+          <li><span class="min">winter</span><span>Sauna and cold plunge on the Hudson in Kingston, or with Mohonk views in New Paltz</span></li>
+          <li><span class="min">summer</span><span>The floating pool at Sojourner Truth State Park</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="head"><p class="label">From guests on Airbnb</p><h2>5.0 across 51 stays</h2></div>
+    <div class="reviews">
+      <blockquote><p>“Our grandkids loved to play in the deer fenced yard, and we enjoyed the screened in back porch, where we could even hear the cows down the road mooing occasionally.”</p><footer>Patricia, New York · stayed two weeks</footer></blockquote>
+      <blockquote><p>“The screened in porch and solo stove in particular were huge hits with our group!”</p><footer>Heidi, New York · stayed with kids</footer></blockquote>
+      <blockquote><p>“Beds, bedding and bathrooms were all first rate. We would definitely stay there again.”</p><footer>Robert, Herndon, VA · stayed with kids</footer></blockquote>
+    </div>
+    <p class="more"><a href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">Read all 51 reviews on Airbnb ↗</a></p>
+  </div>
+</section>
+
+<section id="know">
+  <div class="wrap">
+    <div class="head"><p class="label">Good to know</p><h2>Before you book</h2></div>
+    <dl class="know">
+      <div><dt>Check-in / out</dt><dd>In after 3:00 PM, out by 11:00 AM. Self check-in with a keypad.</dd></div>
+      <div><dt>Early or late</dt><dd>Early check-in and late checkout are possible case by case. It depends on whether another guest arrives or leaves that day, so just ask.</dd></div>
+      <div><dt>Pets</dt><dd>Tell us about any pet before booking. Dogs case by case; smaller, well-trained dogs fit best. No cats (severe allergies).</dd></div>
+      <div><dt>Quiet house</dt><dd>No parties, and no groups planning to be loud late at night. Guest and pet count should match your booking.</dd></div>
+      <div><dt>Fewer ticks</dt><dd>Ticks ride in on deer, and the fence keeps the deer out. You'll see far fewer here than on an unfenced property in the area. A quick check after time outside in late spring and early fall is still smart.</dd></div>
+      <div><dt>Access</dt><dd>The whole house is yours except the basement, which is storage and utilities.</dd></div>
+      <div><dt>Work</dt><dd>Spectrum internet at 163 Mbps and a dedicated desk in Bedroom 2.</dd></div>
+      <div><dt>Laundry</dt><dd>Washer and dryer in the house.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <p class="label">Book a stay</p>
+    <h2>Send us your dates</h2>
+    <p style="margin-top:1rem">Message us with your dates, how many guests, and any pets, and we'll reply with availability and a rate. You can also check the calendar and book on Airbnb.</p>
+    <div class="ctas">
+      <a class="btn solid" href="mailto:stay@fireflyhillhouse.com?subject=Firefly%20Hill%20House%20dates">Email us your dates</a>
+      <div class="mailrow"><span class="email" id="email">stay@fireflyhillhouse.com</span><button class="copy" id="copybtn" type="button">Copy</button></div>
+      <a class="btn ghost" href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">See dates on Airbnb ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="site"><span>Firefly Hill House · Stone Ridge, New York</span><span>Hosted by Paul &amp; Bob</span></footer>
+</div>
+
+<div class="bar" id="bar">
+  <div><strong>Firefly Hill House</strong><small>Sleeps 6 · 5.0 on Airbnb</small></div>
+  <a class="btn solid" href="#book">Check dates</a>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
+  <button class="x" id="lbx" aria-label="Close">×</button>
+  <button class="prev" id="lbp" aria-label="Previous photo">‹</button>
+  <button class="next" id="lbn" aria-label="Next photo">›</button>
+</div>
+
+<script>
+(function(){
+  var f=null;
+  if(f){for(var i=0;i<12;i++){var s=document.createElement('span');s.style.left=(5+Math.random()*90)+'%';s.style.top=(35+Math.random()*60)+'%';s.style.animationDelay=(Math.random()*6)+'s';s.style.animationDuration=(4+Math.random()*4)+'s';f.appendChild(s);}}
+  // sticky bar: reserve space, hide once the booking section is on screen
+  var bar=document.getElementById('bar'),book=document.getElementById('book');
+  function sizeBar(){document.documentElement.style.setProperty('--barh',getComputedStyle(bar).display==='none'?'0px':bar.offsetHeight+'px')}
+  sizeBar();addEventListener('resize',sizeBar);
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){bar.classList.toggle('away',e[0].isIntersecting)}).observe(book);}
+  var cb=document.getElementById('copybtn');
+  cb.addEventListener('click',function(){
+    var el=document.getElementById('email'),t=el.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(t).then(function(){cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},1800)},sel);}catch(e){sel();}
+  });
+  var imgs=[].slice.call(document.querySelectorAll('img[data-full]'));
+  var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap'),cur=0,x0=null;
+  function show(i){cur=(i+imgs.length)%imgs.length;li.src=imgs[cur].dataset.full;li.alt=imgs[cur].alt;lc.textContent=imgs[cur].alt+' · '+(cur+1)+' / '+imgs.length;lb.hidden=false;}
+  imgs.forEach(function(im,i){im.tabIndex=0;im.addEventListener('click',function(){show(i)});im.addEventListener('keydown',function(e){if(e.key==='Enter')show(i)});});
+  document.getElementById('lbx').onclick=function(){lb.hidden=true};
+  document.getElementById('lbp').onclick=function(){show(cur-1)};
+  document.getElementById('lbn').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.hidden=true});
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));x0=null});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
+
+</body>
+</html>
