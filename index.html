@@ -202,7 +202,7 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
 <div class="wrap">
   <header class="top">
     <a class="mark" href="#top" id="top"><i aria-hidden="true"></i>Firefly Hill House</a>
-    <a class="btn solid" href="#book">Book a stay</a>
+    <a class="btn solid" href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">Book on Airbnb</a>
   </header>
 
   <div class="hero">
@@ -386,13 +386,12 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
 <section class="book" id="book">
   <div class="wrap">
     <p class="label">Book a stay</p>
-    <h2>Send us your dates</h2>
-    <p style="margin-top:1rem">Message us with your dates, how many guests, and any pets, and we'll reply with availability and a rate. You can also check the calendar and book on Airbnb.</p>
+    <h2>Pick your dates</h2>
+    <p style="margin-top:1rem">We take bookings through Airbnb. The calendar there shows open dates and the full price for your stay.</p>
     <div class="ctas">
-      <a class="btn solid" href="mailto:stay@fireflyhillhouse.com?subject=Firefly%20Hill%20House%20dates">Email us your dates</a>
-      <div class="mailrow"><span class="email" id="email">stay@fireflyhillhouse.com</span><button class="copy" id="copybtn" type="button">Copy</button></div>
-      <a class="btn ghost" href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">See dates on Airbnb ↗</a>
+      <a class="btn solid" href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">Check dates and book on Airbnb ↗</a>
     </div>
+    <p style="margin-top:1.25rem;font-size:.95rem">Questions about pets, early check-in or anything else? Use “Message host” on the listing and we'll get back to you, usually within the day.</p>
   </div>
 </section>
 
@@ -402,7 +401,7 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
 
 <div class="bar" id="bar">
   <div><strong>Firefly Hill House</strong><small>Sleeps 6 · 5.00 on Airbnb</small></div>
-  <a class="btn solid" href="#book">Check dates</a>
+  <a class="btn solid" href="https://www.airbnb.com/rooms/872323721871999397" target="_blank" rel="noopener">Check dates</a>
 </div>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
@@ -423,12 +422,6 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
   function sizeBar(){document.documentElement.style.setProperty('--barh',getComputedStyle(bar).display==='none'?'0px':bar.offsetHeight+'px')}
   sizeBar();addEventListener('resize',sizeBar);
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){bar.classList.toggle('away',e[0].isIntersecting)}).observe(book);}
-  var cb=document.getElementById('copybtn');
-  cb.addEventListener('click',function(){
-    var el=document.getElementById('email'),t=el.textContent;
-    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
-    try{navigator.clipboard.writeText(t).then(function(){cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},1800)},sel);}catch(e){sel();}
-  });
   var imgs=[].slice.call(document.querySelectorAll('img[data-full]'));
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap'),cur=0,x0=null;
   function show(i){cur=(i+imgs.length)%imgs.length;li.src=imgs[cur].dataset.full;li.alt=imgs[cur].alt;lc.textContent=imgs[cur].alt+' · '+(cur+1)+' / '+imgs.length;lb.hidden=false;}
