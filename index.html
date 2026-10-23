@@ -60,7 +60,12 @@ p{margin:0}
 /* hero: photo first on phones */
 .hero{display:flex;flex-direction:column;gap:1.25rem;padding-block:.25rem 0}
 .photo-hero{position:relative;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
-.photo-hero img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.trio{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.trio::-webkit-scrollbar{display:none}
+.trio img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px;pointer-events:none}
+.dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(0,0,0,.15);transition:background .2s,transform .2s}
+.dots span.on{background:#fff;transform:scale(1.25)}
 .intro{display:grid;gap:1rem}
 .hero h1{font-size:clamp(2.9rem,13vw,8.5rem);line-height:.95}
 .hero .sub{font-size:1.1rem;color:var(--ink-soft);max-width:34rem}
@@ -74,9 +79,11 @@ p{margin:0}
 .rating span{color:var(--ink-soft);font-size:.9rem}
 @media (min-width:760px){
   .hero{display:grid;grid-template-columns:1fr minmax(16rem,22rem);gap:2rem;padding-top:clamp(1.5rem,4vw,3rem);align-items:end}
-  .intro{grid-column:1}.facts{grid-column:2;grid-row:1}
-  .photo-hero{grid-column:1/-1;margin-inline:0}
-  .photo-hero img{aspect-ratio:16/8;border-radius:4px}
+  .intro{grid-column:1;grid-row:1}.facts{grid-column:2;grid-row:1}
+  .photo-hero{grid-column:1/-1;grid-row:2;margin-inline:0}
+  .trio{display:grid;grid-template-columns:1.35fr .8fr 1.35fr;gap:8px;overflow:visible;height:clamp(22rem,42vw,34rem)}
+  .trio img{aspect-ratio:auto;height:100%;border-radius:4px}
+  .dots{display:none}
   .rating{grid-column:1/-1}
   .hero .sub{font-size:1.3rem}
 }
@@ -196,7 +203,12 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
 
   <div class="hero">
     <div class="photo-hero">
-      <img src="images/dusk.jpg" alt="The house at dusk, every window lit" data-full="images/dusk.jpg" fetchpriority="high">
+      <div class="trio" id="trio">
+        <img src="images/snow.jpg" alt="The house and yard under fresh snow" data-full="images/snow.jpg" fetchpriority="high">
+        <img src="images/fireplace.jpg" alt="Gas fireplace with reclaimed-wood surround" data-full="images/fireplace.jpg">
+        <img src="images/bedroom2.jpg" alt="Hästens queen bed in Bedroom 2" data-full="images/bedroom2.jpg">
+      </div>
+      <div class="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
     </div>
     <div class="intro">
       <p class="label">Stone Ridge · Hudson Valley · New York</p>
@@ -400,6 +412,8 @@ footer.site{padding-block:1.5rem;font-size:.85rem;color:var(--ink-soft);display:
 (function(){
   var f=null;
   if(f){for(var i=0;i<12;i++){var s=document.createElement('span');s.style.left=(5+Math.random()*90)+'%';s.style.top=(35+Math.random()*60)+'%';s.style.animationDelay=(Math.random()*6)+'s';s.style.animationDuration=(4+Math.random()*4)+'s';f.appendChild(s);}}
+  var tr=document.getElementById('trio'),ds=document.querySelectorAll('.dots span');
+  tr.addEventListener('scroll',function(){var i=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach(function(d,k){d.classList.toggle('on',k===i)})},{passive:true});
   // sticky bar: reserve space, hide once the booking section is on screen
   var bar=document.getElementById('bar'),book=document.getElementById('book');
   function sizeBar(){document.documentElement.style.setProperty('--barh',getComputedStyle(bar).display==='none'?'0px':bar.offsetHeight+'px')}
